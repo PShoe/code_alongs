@@ -1,0 +1,23 @@
+h1 {
+    color: tomato;
+    font-size: 100px;
+    background-color: mistyrose;
+}
+#title2 {
+    color: purple;
+}
+.warning {
+    text-decoration: underline;
+}
+article > h1 {
+    color: blue;
+}
+h1.blah {
+    color: green;
+}
+h1,
+h2,
+h3,
+h4 {
+
+}
