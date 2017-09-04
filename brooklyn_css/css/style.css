@@ -1,0 +1,27 @@
+body {
+  background-color: lightgrey;
+  box-sizing: border-box;
+  color: grey;
+}
+.main {
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding-left: 40px;
+
+}
+.top {
+  width: 600px;
+}
+.press {
+  margin: 0 auto;
+}
+.press img {
+  border: 2px solid grey;
+  width: 150px;
+
+}
+h1 {
+  color: grey;
+}
