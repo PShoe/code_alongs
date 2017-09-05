@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #efefef;
+}
+.container {
+  border: 2px solid blue;
+  width: 900px;
+  margin: 0 auto;
+}
+main {
+  display: inline-block;
+  /*float: left;*/
+  vertical-align: top;
+  width: 70%;
+  background-color: white;
+  padding: 10px;
+}
+aside {
+  display: inline-block;
+  vertical-align: top;
+  /*float:left;*/
+  width: 30%;
+  background-color: pink;
+}
+article {
+  background: tomato;
+}
+article footer {
+  border-top: 1px solid black;
+  border-bottom: 1px dashed black;
+}

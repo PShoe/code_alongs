@@ -1,0 +1,9 @@
+/*div {
+  display: inline-block;
+}*/
+.one {
+  width:200px;
+  text-align: center;
+  background-color: yellow;
+  margin: 0 auto;
+}
