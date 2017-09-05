@@ -1,0 +1,24 @@
+body {
+  width: 80%;
+}
+.span1,
+.span2,
+.span3 {
+  margin-right: 3.333333%; /* 20/600 */
+  float: left;
+  margin-bottom: 10px;
+  min-height: 100px;
+}
+.span1 {
+  background-color: mistyrose;
+  width: 30%; /* 180/600 */
+}
+.span2 {
+  background-color: linen;
+  width: 63.3333333%; /* 380/600 */
+}
+.span3 {
+  background-color: plum;
+  width: 580px;
+  width: 96.66666666% /* 580/600 = .9666666666667 */
+}
