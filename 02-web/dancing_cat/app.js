@@ -22,6 +22,7 @@ var bike = function () {
 }
 
 var bikeTimer = null;
+
 var bikeSlow = function () {
   bikeStop();
   bikeTimer = setInterval(bike,100);
