@@ -9,6 +9,12 @@
     <%= Time.now %>
     <form action="/answer" method="get">
       <input type="text" name="first">
+      <select name="operator">
+          <option value="add">+</option>
+          <option value="subtract">-</option>
+          <option value="multiply">*</option>
+          <option value="divide">%</option>
+      </select>
       <input type="text" name="second">
       <button type="submit">Submit</button>
     </form>
