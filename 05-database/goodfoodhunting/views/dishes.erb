@@ -1,11 +1,15 @@
-<h1>all dishes</h1>
 
+<h1>All Dishes</h1>
 
 <% @dishes.each do |dish| %>
-  <img src="<%= dish['image_url'] %>" alt="">
+<article class="dish">
   <h2>
-    <a href="/dishes/<%= dish['id'] %>">
-    <%= dish['name'] %>
+    <a href="/dishes/<%= dish["id"] %>">
+      <!-- <a href="/dishes?id=<%#= dish["id"] %>"> -->
+      <%= dish["name"] %>
     </a>
   </h2>
+  <a href="/dishes/<%= dish["id"] %>/edit">edit</a>
+  <img src="<%= dish["image_url"] %>" width="200">
+</article>
 <% end %>
