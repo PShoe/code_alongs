@@ -6,7 +6,7 @@
 <% @dishes.each do |dish| %>
 <article class="dish">
   <h2>
-    <a href="/dishes/<%= dish["id"] %>">
+    <a href="/dishes/<%= dish.id %>">
       <!-- <a href="/dishes?id=<%#= dish["id"] %>"> -->
       <%= dish.name %>
     </a>
