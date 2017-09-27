@@ -7,7 +7,9 @@ require 'pry'
 
 def run_db(sql)
   conn = PG.connect(dbname: "goodfoodhunting")
-  conn.exec(sql)
+  result = conn.exec(sql)
+  conn.close
+  result
 end
 
 get '/' do
