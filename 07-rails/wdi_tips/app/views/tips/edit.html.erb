@@ -1,0 +1,10 @@
+<form action="/tips/<%= @tip.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="put">
+  <h1><%= @tip.title %> to edit:</h1>
+  <label for="title">title</label>
+  <input type="" name="title" value="<%= @tip.title %>">
+  <label for="content"></label>
+  <textarea name="content"><%= @tip.content %></textarea>
+  <button>Post</button>
+</form>

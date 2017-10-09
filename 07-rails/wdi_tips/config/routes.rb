@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
   resources :tips
   # resources takes care of the below:
-  # get '/tips/:id', to: 'tips#show'
-  # get '/tips', to: 'tips#index', etc
+  get '/tips', to: 'tips#index'
+  get '/tips/new', to: 'tips#new'
+  get '/tips/:id', to: 'tips#show'
+  get '/tips/:id/edit', to: 'tips#edit'
+  put '/tips/:id', to: 'tips#update'
+  post '/tips', to: 'tips#create'
+
+
+
 
   get '/about', to: 'pages#about'
   # part before hash- controller
