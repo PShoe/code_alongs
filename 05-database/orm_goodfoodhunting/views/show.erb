@@ -14,6 +14,6 @@
 
 <% @comments.each do |comment| %>
   <p><%= comment.body %></p>
-    <div><%= comment.user.email if comment.user %></div>
+    <div><%= comment.player.name if comment.player %></div>
     <!-- if the comment has a user..? -->
 <% end %>
