@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010010333) do
+ActiveRecord::Schema.define(version: 20171010034507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,21 @@ ActiveRecord::Schema.define(version: 20171010010333) do
     t.index ["tip_id"], name: "index_comments_on_tip_id"
   end
 
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "tip_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["tip_id"], name: "index_taggings_on_tip_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tips", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -31,4 +46,6 @@ ActiveRecord::Schema.define(version: 20171010010333) do
   end
 
   add_foreign_key "comments", "tips"
+  add_foreign_key "taggings", "tags"
+  add_foreign_key "taggings", "tips"
 end

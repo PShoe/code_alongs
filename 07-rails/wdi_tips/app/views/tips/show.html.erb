@@ -26,7 +26,11 @@
 </form> -->
 <!-- - -->
 
-
+<h5>Comments</h5>
 <% @comments.each do |comment| %>
   <p><%= comment.content %></p>
+<% end %>
+<h5>Tags</h5>
+<% @tip.tags.each do |tag| %>
+  <p><%= tag.name %></p>
 <% end %>

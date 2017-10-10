@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :taggings
+  resources :tags
   resources :comments
-  resources :tips
+  # resources :tips
   # resources takes care of the below:
   get '/tips', to: 'tips#index'
   get '/tips/new', to: 'tips#new'
