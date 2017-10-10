@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :tips
   # resources takes care of the below:
   get '/tips', to: 'tips#index'
@@ -7,8 +8,6 @@ Rails.application.routes.draw do
   get '/tips/:id/edit', to: 'tips#edit'
   put '/tips/:id', to: 'tips#update'
   post '/tips', to: 'tips#create'
-
-
 
 
   get '/about', to: 'pages#about'

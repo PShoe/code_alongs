@@ -1,7 +1,32 @@
-<!-- <a href="/tips//edit">Edit</a> -->
-<a href="/tips/tips/:id/edit">Edit</a>
- <!-- // shorthand for tips/:id/-->
+
+<a href="/tips/<%= @tip.id %>/edit">Edit</a>
+
 
 <h1><%= @tip.title %></h1>
 
 <%= raw @content_html %>
+
+
+<!-- shortcut to generate form -->
+<%= form_tag '/comments', method: 'post' do %>
+  <input type="hidden" name="tip_id" value="<%= @tip.id %>">
+  <label for="">comment</label>
+  <textarea name="content" rows="8" cols="80"></textarea>
+  <button>post comment</button>
+<% end %>
+<!-- - -->
+
+<!-- long form -->
+<!-- <form action="/comments" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="tip_id" value="<%= @tip.id %>">
+  <label for="">comment</label>
+  <textarea name="content" rows="8" cols="80"></textarea>
+  <button>post comment</button>
+</form> -->
+<!-- - -->
+
+
+<% @comments.each do |comment| %>
+  <p><%= comment.content %></p>
+<% end %>

@@ -4,6 +4,7 @@ class TipsController < ApplicationController
     # render :details - optional to rename later, show is convention
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     @content_html = markdown.render(@tip.content)
+    @comments= @tip.comments
   end
   def index
     # show all tips
