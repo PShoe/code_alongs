@@ -1,0 +1,44 @@
+.pull-right {
+  float: right;
+}
+.ui-card {
+  width: 48%;
+  background-color: mistyrose;
+  border-radius: 5px;
+}
+.avatar {
+  width: 2em;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.content {
+  padding: 1em;
+}
+.ui-card header {
+  line-height: 2em;
+}
+.ui-card .image-wrapper {
+  position: relative;
+}
+.ui-card .star {
+  user-select: none;
+  -webkit-user-select: none;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 2em;
+  opacity: 0;
+  cursor: pointer;
+  transition: .4s;
+}
+.ui-card .image-wrapper:hover .star {
+opacity: 1;
+}
+.ui-card .star:hover {
+  color: yellow;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

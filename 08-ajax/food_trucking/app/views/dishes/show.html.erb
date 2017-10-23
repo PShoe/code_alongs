@@ -1,0 +1,53 @@
+<h1><%= @dish.name %></h1>
+
+<!-- <div class="status"></div> -->
+
+<div class="comments">
+    <% @dish.comments.each do |comment| %>
+    <article>
+      <p><%= comment.body %></p>
+      <hr>
+    </article>
+  <% end %>
+</div>
+
+<form action="/comments" method="post">
+  <label for="">New Comment</label>
+  <textarea name=""></textarea>
+  <button id="new-comment-btn">Submit</button>
+</form>
+
+<script>
+  var token = $('meta[name="csrf-token"]').attr('content');
+  
+  $('#new-comment-btn').on('click', function(event) {
+    // $('.status').text("posting comment...")
+    event.preventDefault();
+
+
+    var options = {
+      url: '/api/comments',
+      method: 'post',
+      data: {
+        dish_id: <%= @dish.id %>,
+        body: $('textarea').val()
+      }
+    }
+
+    var appendComment = function(response) {
+      var $article = $('<article>');
+      var $p = $('<p>').text(response.body);
+      var $hr = $('<hr>');
+
+      $article.append( $p );
+      $article.append( $hr );
+      $('.comments').append( $article )
+      $article.hide().fadeIn();
+
+    }
+
+    $.ajax(options).done(appendComment);
+
+  });
+
+</script>

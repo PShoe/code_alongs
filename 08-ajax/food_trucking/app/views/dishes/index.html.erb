@@ -1,0 +1,45 @@
+<div class="flex-container">
+<% @dishes.each do |dish| %>
+
+  <div class='ui-card' data-dish-id="<%= dish.id %>">
+    <header class="content">
+      <div class="pull-right">14h</div>
+        <img src="http://via.placeholder.com/100x100" class="avatar">
+        <span>DT</span>
+    </header>
+
+    <div class="image-wrapper">
+      <img src="http://via.placeholder.com/800x800" alt="">
+      <span class="star">&#9733;</span>
+    </div>
+
+    <div class="content">
+      <h2><%= dish.name %></h2>
+      <h3>at GA</h3>
+    </div>
+
+    <footer class="content">
+      <span class="pull-right likes-count"><%= dish.likes.count %></span>
+      <span>By DT</span>
+    </footer>
+  </div>
+<% end %>
+</div>
+
+
+<script>
+  $('.star').on('click', function(event) {
+
+    var dish_id = $(event.target).closest('.ui-card').data('dish-id')
+    $.ajax({
+        url: '/api/likes',
+        method: 'post',
+        data: { dish_id: dish_id }
+        }).done(
+          function(resp) {
+          var $likesCount = $(event.target).closest('.ui-card').find('.likes-count');
+          $likesCount.text(resp.likes_count);
+          console.log(  $likesCount.text() )
+          });
+    })
+</script>
